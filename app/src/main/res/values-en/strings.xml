@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DAS_Mikel_Idoyaga</string>
+    <string name="tvSesion">Log In</string>
+    <string name="etUsuario">Username</string>
+    <string name="epContraseña">Password</string>
+    <string name="btnEntrar">Log In</string>
+
+</resources>
