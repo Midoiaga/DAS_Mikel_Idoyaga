@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">DAS_Mikel_Idoyaga</string>
-    <string name="tvSesion">Iniciar Sesion</string>
+    <string name="tvSesion">Iniciar Sesión</string>
     <string name="etUsuario">Usuario</string>
     <string name="epContraseña">Contraseña</string>
     <string name="btnEntrar">Entrar</string>
-
+    <string name="btnIngles">Ingles</string>
+    <string name="btnEspañol">Español</string>
+    <string name="tvRegistrar">Todavía no te has registrado? Clicka aquí</string>
+    <string name="btnAqui">Aquí</string>
 
 
 </resources>

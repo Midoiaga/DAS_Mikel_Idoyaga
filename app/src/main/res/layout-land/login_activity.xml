@@ -14,22 +14,37 @@
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.119" />
+
+    <Button
+        android:id="@+id/btnEntrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:background="@color/black"
+        android:text="@string/btnEntrar"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/epContraseña" />
 
     <EditText
         android:id="@+id/etUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/etUsuario"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSesion" />
 
@@ -37,72 +52,63 @@
         android:id="@+id/epContraseña"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/epContraseña"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUsuario" />
-
-    <Button
-        android:id="@+id/btnEntrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:background="@color/black"
-        android:text="@string/btnEntrar"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/epContraseña" />
 
     <Button
         android:id="@+id/btnIngles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="56dp"
         android:onClick="onIdioma"
         android:text="@string/btnIngles"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
+        app:layout_constraintEnd_toStartOf="@+id/btnEspañol"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvSesion"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnEspañol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="68dp"
         android:onClick="onIdioma"
         android:text="@string/btnEspañol"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnIngles"
-        app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvRegistrar"
         android:layout_width="267dp"
         android:layout_height="36dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="56dp"
         android:text="@string/tvRegistrar"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toEndOf="@+id/tvSesion"
+        app:layout_constraintTop_toBottomOf="@+id/btnIngles" />
 
     <Button
         android:id="@+id/btnAqui"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="@string/btnAqui"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toEndOf="@+id/tvSesion"
         app:layout_constraintTop_toBottomOf="@+id/tvRegistrar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

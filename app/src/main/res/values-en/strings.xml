@@ -5,5 +5,9 @@
     <string name="etUsuario">Username</string>
     <string name="epContraseña">Password</string>
     <string name="btnEntrar">Log In</string>
+    <string name="btnIngles">English</string>
+    <string name="btnEspañol">Spanish</string>
+    <string name="tvRegistrar">Click here for register</string>
+    <string name="btnAqui">Here</string>
 
 </resources>
