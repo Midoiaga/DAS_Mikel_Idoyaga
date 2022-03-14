@@ -68,14 +68,21 @@ public class LoginActivity extends AppCompatActivity {
         EditText etContraseña = findViewById(R.id.epContraseña);
         String contraseña = etContraseña.getText().toString();
         if(GestorDB.coincide(usuario,contraseña)){
-            Toast toast= Toast.makeText(getApplicationContext(),"hola",Toast.LENGTH_SHORT);
-            toast.setMargin(50,50);
-            toast.show();
+            Intent i = new Intent (this, GameActivity.class);
+            i.putExtra("Idioma",local);
+            finish();
+            startActivity(i);
         }
         else{
-            Toast toast= Toast.makeText(getApplicationContext(),"nooo",Toast.LENGTH_SHORT);
-            toast.setMargin(50,50);
-            toast.show();
+            if("es".equalsIgnoreCase(local.toString())){
+                hacerToast("Usuario o contraseña incorrecta");
+            }else{
+                hacerToast("Username or password incorrect");
+            }
         }
+    }
+    public void hacerToast(String s){
+        Toast toast= Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT);
+        toast.show();
     }
 }

@@ -12,5 +12,8 @@
     <string name="tvTextRegistrar">Sign UP</string>
     <string name="epContraseñaConfir">Confirm Password</string>
     <string name="btnRegistrar">SIGN UP</string>
+    <string name="btnCompartir">Share</string>
+    <string name="btnInstrucciones">Instructions</string>
+    <string name="btnRendirse">Give up</string>
 
 </resources>
