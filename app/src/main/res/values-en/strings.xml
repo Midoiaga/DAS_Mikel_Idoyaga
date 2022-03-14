@@ -9,5 +9,8 @@
     <string name="btnEspañol">Spanish</string>
     <string name="tvRegistrar">Click here for register</string>
     <string name="btnAqui">Here</string>
+    <string name="tvTextRegistrar">Sign In</string>
+    <string name="epContraseñaConfir">Confirm Password</string>
+    <string name="btnRegistrar">SIGN IN</string>
 
 </resources>

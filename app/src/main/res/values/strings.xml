@@ -8,6 +8,11 @@
     <string name="btnEspañol">Español</string>
     <string name="tvRegistrar">Todavía no te has registrado? Clicka aquí</string>
     <string name="btnAqui">Aquí</string>
+    <string name="tvTextRegistrar">Registrarse</string>
+    <string name="epContraseñaConfir">Confirmar Contraseña</string>
+    <string name="btnRegistrar">Registrarse</string>
+
+
 
 
 </resources>

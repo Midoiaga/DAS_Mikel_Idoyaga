@@ -3,6 +3,7 @@ package com.example.das_mikel_idoyaga;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
     private Locale local = new Locale("es");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Al crear la actividad se vincula con  el layout y el idioma
+        //Al crear la actividad se vincula con  el layout que sirve para iniciar sesion y con el idioma
         super.onCreate(savedInstanceState);
         //Extras guardados para mantener el idioma
         Bundle extras = getIntent().getExtras();
@@ -33,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onIdioma(View view){
-        //Función para cambiar de idioma dependiendo a que idioma clickes
+        //Metodo para cambiar de idioma dependiendo a que idioma clickes
         if (view.getId() == R.id.btnEspañol){
             local = new Locale("es");
         }
@@ -48,5 +49,11 @@ public class LoginActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
         finish();
         startActivity(getIntent().putExtra("Idioma",local));
+    }
+    public void onAqui(View view){
+        Intent i = new Intent (this, RegisterActivity.class);
+        i.putExtra("Idioma",local);
+        startActivity(i);
+
     }
 }

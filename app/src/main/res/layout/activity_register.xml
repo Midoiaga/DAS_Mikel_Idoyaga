@@ -7,15 +7,72 @@
     tools:context=".RegisterActivity">
 
     <TextView
-        android:id="@+id/tvTextRegister"
+        android:id="@+id/tvTextRegistrar"
         android:layout_width="222dp"
         android:layout_height="51dp"
-        android:text="@string/tvSesion"
+        android:text="@string/tvTextRegistrar"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.077" />
+
+    <EditText
+        android:id="@+id/etUsuarioRegis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/etUsuario"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTextRegistrar" />
+
+    <EditText
+        android:id="@+id/epContraseñaRegis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/epContraseña"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUsuarioRegis" />
+
+    <EditText
+        android:id="@+id/epContraseñaConfir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/epContraseñaConfir"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/epContraseñaRegis" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        android:onClick="onRegistrar"
+        android:text="@string/btnRegistrar"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/epContraseñaConfir" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
