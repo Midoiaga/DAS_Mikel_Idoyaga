@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -22,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             local = (Locale) extras.get("Idioma");
+            Log.d("Idioma",local.toString());
         }
         Locale.setDefault(local);
         Configuration configuration = getBaseContext().getResources().getConfiguration();
@@ -43,7 +45,26 @@ public class RegisterActivity extends AppCompatActivity {
         if (contraseña.equalsIgnoreCase(contraseñaConfir)){
             if(!GestorDB.existe(usuario)){
                 GestorDB.crearUsuario(usuario,contraseña);
+            }else{
+                if("es".equalsIgnoreCase(local.toString())){
+                    hacerToast("Usuario ya esta cogido");
+                }else{
+                    hacerToast("User is taken");
+                }
+
             }
+        }else{
+            if("es".equalsIgnoreCase(local.toString())){
+                hacerToast("Contraseñas diferentes");
+            }else{
+                hacerToast("Diffetent Passwords");
+            }
+
         }
+    }
+
+    public void hacerToast(String s){
+        Toast toast= Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT);
+        toast.show();
     }
 }

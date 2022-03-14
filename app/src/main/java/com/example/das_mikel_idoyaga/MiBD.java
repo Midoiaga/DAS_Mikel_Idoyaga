@@ -24,6 +24,22 @@ public class MiBD extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+    public boolean coincide(String usuario,String contraseña){
+        boolean resultado = false;
+        int cont = 0;
+        SQLiteDatabase bd = getWritableDatabase();
+        Cursor c = bd.rawQuery("SELECT Usuario FROM Usuarios WHERE Usuario='"+usuario+"' AND Contraseña='"+contraseña+"'", null);
+        while (c.moveToNext()){
+            Log.d("usu",c.getString(0));
+            cont++;
+        }
+        if (cont>=1){
+            resultado = true;
+        }
+        c.close();
+        bd.close();
+        return resultado;
+    }
     //Metodo para saber si existe un usuario con el mismo nombre en la base de datos
     public boolean existe(String usuario){
         boolean resultado = false;

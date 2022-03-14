@@ -7,10 +7,10 @@
     <string name="btnEntrar">Log In</string>
     <string name="btnIngles">English</string>
     <string name="btnEspañol">Spanish</string>
-    <string name="tvRegistrar">Click here for register</string>
+    <string name="tvRegistrar">Click here to register</string>
     <string name="btnAqui">Here</string>
-    <string name="tvTextRegistrar">Sign In</string>
+    <string name="tvTextRegistrar">Sign UP</string>
     <string name="epContraseñaConfir">Confirm Password</string>
-    <string name="btnRegistrar">SIGN IN</string>
+    <string name="btnRegistrar">SIGN UP</string>
 
 </resources>
