@@ -48,7 +48,7 @@ public class GameActivity extends AppCompatActivity {
 
     }
     public void onIns (View v){
-        DialogFragment dialogoalerta= new InsDialogo(local.toString());
+        DialogFragment dialogoalerta= new InsDialogo();
         dialogoalerta.show(getSupportFragmentManager(), "etiqueta");
     }
     public void onComp(View v){

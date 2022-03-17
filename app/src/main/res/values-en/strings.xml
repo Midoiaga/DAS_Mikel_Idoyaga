@@ -9,11 +9,15 @@
     <string name="btnEspañol">Spanish</string>
     <string name="tvRegistrar">Click here to register</string>
     <string name="btnAqui">Here</string>
-    <string name="tvTextRegistrar">Sign UP</string>
+    <string name="tvTextRegistrar">Sign Up</string>
     <string name="epContraseñaConfir">Confirm Password</string>
     <string name="btnRegistrar">SIGN UP</string>
     <string name="btnCompartir">Share</string>
     <string name="btnInstrucciones">Instructions</string>
     <string name="btnRendirse">Give up</string>
+    <string name="tUsuarioOContraseñaMal">Username or password incorrect</string>
+    <string name="tUsuarioCogido">User is taken</string>
+    <string name="tContraseñasDiferentes">Diffetent Passwords</string>
+    <string name="dInstrucciones">Click to kill all the monster to save the destiny of humanity. And remember never surrender. P.D. You can share your progress with the  SHARE button</string>
 
 </resources>

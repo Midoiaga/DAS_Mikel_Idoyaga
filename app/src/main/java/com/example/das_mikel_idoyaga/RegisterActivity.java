@@ -3,9 +3,9 @@ package com.example.das_mikel_idoyaga;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -45,26 +45,20 @@ public class RegisterActivity extends AppCompatActivity {
         if (contraseña.equalsIgnoreCase(contraseñaConfir)){
             if(!GestorDB.existe(usuario)){
                 GestorDB.crearUsuario(usuario,contraseña);
+                Intent i = new Intent (this, GameActivity.class);
+                i.putExtra("Idioma",local);
+                finish();
+                startActivity(i);
             }else{
-                if("es".equalsIgnoreCase(local.toString())){
-                    hacerToast("Usuario ya esta cogido");
-                }else{
-                    hacerToast("User is taken");
-                }
-
+                hacerToast(R.string.tUsuarioCogido);
             }
         }else{
-            if("es".equalsIgnoreCase(local.toString())){
-                hacerToast("Contraseñas diferentes");
-            }else{
-                hacerToast("Diffetent Passwords");
-            }
-
+            hacerToast(R.string.tContraseñasDiferentes);
         }
     }
 
-    public void hacerToast(String s){
-        Toast toast= Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT);
+    public void hacerToast(int s){
+        Toast toast= Toast.makeText(this,s,Toast.LENGTH_SHORT);
         toast.show();
     }
 }

@@ -70,19 +70,14 @@ public class LoginActivity extends AppCompatActivity {
         if(GestorDB.coincide(usuario,contraseña)){
             Intent i = new Intent (this, GameActivity.class);
             i.putExtra("Idioma",local);
-            finish();
             startActivity(i);
         }
         else{
-            if("es".equalsIgnoreCase(local.toString())){
-                hacerToast("Usuario o contraseña incorrecta");
-            }else{
-                hacerToast("Username or password incorrect");
-            }
+            hacerToast(R.string.tUsuarioOContraseñaMal);
         }
     }
-    public void hacerToast(String s){
-        Toast toast= Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT);
+    public void hacerToast(int s){
+        Toast toast= Toast.makeText(this,s,Toast.LENGTH_SHORT);
         toast.show();
     }
 }

@@ -14,6 +14,10 @@
     <string name="btnCompartir">Compartir</string>
     <string name="btnInstrucciones">Instruciones</string>
     <string name="btnRendirse">Rendirse</string>
+    <string name="tUsuarioOContraseñaMal">Usuario o contraseña incorrecta</string>
+    <string name="tUsuarioCogido">Usuario ya esta cogido</string>
+    <string name="tContraseñasDiferentes">Contraseñas diferentes</string>
+    <string name="dInstrucciones">Clicka en los monstruos hasta derrotar a todos y asi salvar el destino de la humanidad. Y recuerda pase lo que pase nunca te rindas. P.D. Puedes compartir tu progreso con el boton COMPARTIR</string>
 
 
 
