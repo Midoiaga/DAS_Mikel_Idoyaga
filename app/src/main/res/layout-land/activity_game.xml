@@ -11,10 +11,10 @@
         android:id="@+id/imgMalo"
         android:layout_width="274dp"
         android:layout_height="272dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="68dp"
         android:onClick="onClicker"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@android:drawable/btn_star_big_on" />
@@ -23,39 +23,53 @@
         android:id="@+id/btnRendirse"
         android:layout_width="253dp"
         android:layout_height="126dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="80dp"
         android:backgroundTint="#E60606"
         android:text="@string/btnRendirse"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.824"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCompartir" />
+        app:layout_constraintTop_toTopOf="@+id/btnCompartir" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="188dp"
+        android:backgroundTint="#1E1D1D"
+        android:onClick="onPref"
+        app:layout_constraintBottom_toTopOf="@+id/btnCompartir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.592"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <Button
+        android:id="@+id/btnCompartir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="160dp"
+        android:onClick="onComp"
+        android:text="@string/btnCompartir"
+        app:layout_constraintBottom_toBottomOf="@+id/imgMalo"
+        app:layout_constraintEnd_toStartOf="@+id/btnInstrucciones"
+        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnInstrucciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="76dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="32dp"
         android:onClick="onIns"
         android:text="@string/btnInstrucciones"
         app:layout_constraintBottom_toTopOf="@+id/btnRendirse"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgMalo"
-        app:layout_constraintVertical_bias="0.982" />
-
-    <Button
-        android:id="@+id/btnCompartir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:onClick="onComp"
-        android:text="@string/btnCompartir"
-        app:layout_constraintEnd_toStartOf="@+id/btnInstrucciones"
-        app:layout_constraintHorizontal_bias="0.705"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgMalo" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tvCont"
@@ -69,20 +83,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imgMalo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.267" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:backgroundTint="#1E1D1D"
-        android:onClick="onPref"
-        app:layout_constraintBottom_toTopOf="@+id/tvCont"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
 </androidx.constraintlayout.widget.ConstraintLayout>

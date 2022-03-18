@@ -70,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         if(GestorDB.coincide(usuario,contraseña)){
             Intent i = new Intent (this, GameActivity.class);
             i.putExtra("Idioma",local);
+            i.putExtra("cont",0);
             startActivity(i);
         }
         else{

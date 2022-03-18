@@ -18,8 +18,13 @@
     <string name="tUsuarioCogido">Usuario ya esta cogido</string>
     <string name="tContraseñasDiferentes">Contraseñas diferentes</string>
     <string name="dInstrucciones">Clicka en los monstruos hasta derrotar a todos y asi salvar el destino de la humanidad. Y recuerda pase lo que pase nunca te rindas. P.D. Puedes compartir tu progreso con el boton COMPARTIR</string>
-
-
+    <string name="sRojo">Rojo</string>
+    <string name="sAzul">Azul</string>
+    <string name="sBlanco">Blanco</string>
+    <string name="btnGuardar">Guardar</string>
+    <string name="dtColorFon">Color del fondo</string>
+    <string name="suColorFon">Elige tu color para el fondo</string>
+    <string name="tiColorFon">Color de fondo favorito</string>
 
 
 

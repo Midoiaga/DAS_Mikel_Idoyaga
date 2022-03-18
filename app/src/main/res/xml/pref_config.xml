@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListPreference
+        app:dialogTitle="@string/dtColorFon"
+        app:entries="@array/colores"
+        app:entryValues="@array/codigocolores"
+        app:key="colorpref"
+        app:summary="@string/suColorFon"
+        app:title="@string/tiColorFon" />
+</PreferenceScreen>

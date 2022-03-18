@@ -19,5 +19,12 @@
     <string name="tUsuarioCogido">User is taken</string>
     <string name="tContraseñasDiferentes">Diffetent Passwords</string>
     <string name="dInstrucciones">Click to kill all the monster to save the destiny of humanity. And remember never surrender. P.D. You can share your progress with the  SHARE button</string>
+    <string name="sRojo">Red</string>
+    <string name="sAzul">Blue</string>
+    <string name="sBlanco">White</string>
+    <string name="btnGuardar">Save</string>
+    <string name="dtColorFon">Backgroud Color</string>
+    <string name="suColorFon">Choose your color for the background</string>
+    <string name="tiColorFon">Favourite backgroud color</string>
 
 </resources>

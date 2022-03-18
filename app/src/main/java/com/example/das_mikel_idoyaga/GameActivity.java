@@ -1,12 +1,19 @@
 package com.example.das_mikel_idoyaga;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.fragment.app.DialogFragment;
+import androidx.preference.PreferenceManager;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -17,18 +24,22 @@ import java.util.Locale;
 public class GameActivity extends AppCompatActivity {
     private Locale local;
     private int cont = 0;
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Al crear la actividad se vincula con  el layout que sirve para iniciar sesion y con el idioma
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        cambiarColor();
         //Extras guardados para mantener el idioma
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             local = (Locale) extras.get("Idioma");
+            //cont  = (int) extras.get("cont");
         }
         if (savedInstanceState!= null)
         {
+            local = new Locale(savedInstanceState.getString("idioma"));
             cont= savedInstanceState.getInt("cont");
             Log.d("cont",Integer.toString(cont));
             TextView tvCont = findViewById(R.id.tvCont);
@@ -45,6 +56,7 @@ public class GameActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putInt("cont",cont);
         Log.d("cont",Integer.toString(cont));
+        savedInstanceState.putString("idioma",local.toString());
 
     }
     public void onIns (View v){
@@ -71,5 +83,24 @@ public class GameActivity extends AppCompatActivity {
         cont++;
         TextView tvCont = findViewById(R.id.tvCont);
         tvCont.setText(Integer.toString(cont));
+    }
+    public void onPref(View v){
+        Intent i = new Intent (this, PrefActivity.class);
+        i.putExtra("Idioma",local);
+        i.putExtra("cont",cont);
+        finish();
+        startActivity(i);
+    }
+    private void cambiarColor(){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String asignaturapreferida = prefs.getString("colorpref","blanco");
+        ConstraintLayout cLay = findViewById(R.id.layCons);
+        if (asignaturapreferida.equalsIgnoreCase("blanco")){
+            cLay.setBackgroundColor(Color.WHITE);
+        }else if (asignaturapreferida.equalsIgnoreCase("azul")){
+            cLay.setBackgroundColor(Color.BLUE);
+        }else {
+            cLay.setBackgroundColor(Color.RED);
+        }
     }
 }
