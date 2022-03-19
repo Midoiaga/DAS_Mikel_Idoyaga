@@ -47,6 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
                 GestorDB.crearUsuario(usuario,contraseña);
                 Intent i = new Intent (this, GameActivity.class);
                 i.putExtra("Idioma",local);
+                i.putExtra("cont",0);
                 finish();
                 startActivity(i);
             }else{

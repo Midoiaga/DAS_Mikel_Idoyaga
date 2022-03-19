@@ -29,28 +29,32 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //Al crear la actividad se vincula con  el layout que sirve para iniciar sesion y con el idioma
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
-        cambiarColor();
         //Extras guardados para mantener el idioma
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             local = (Locale) extras.get("Idioma");
-            //cont  = (int) extras.get("cont");
+            cont  = (int) extras.get("cont");
+
         }
         if (savedInstanceState!= null)
         {
+            Log.d("loca",savedInstanceState.getString("idioma"));
             local = new Locale(savedInstanceState.getString("idioma"));
             cont= savedInstanceState.getInt("cont");
             Log.d("cont",Integer.toString(cont));
-            TextView tvCont = findViewById(R.id.tvCont);
-            tvCont.setText(Integer.toString(cont));
         }
+        Log.d("loca",local.toString());
         Locale.setDefault(local);
         Configuration configuration = getBaseContext().getResources().getConfiguration();
         configuration.setLocale(local);
         configuration.setLayoutDirection(local);
         Context context = getBaseContext().createConfigurationContext(configuration);
         getBaseContext().getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
+        setContentView(R.layout.activity_game);
+        cambiarColor();
+        TextView tvCont = findViewById(R.id.tvCont);
+        tvCont.setText(Integer.toString(cont));
+
     }
     protected void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);

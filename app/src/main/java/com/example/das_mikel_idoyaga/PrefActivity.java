@@ -17,6 +17,7 @@ import java.util.Locale;
 
 public class PrefActivity extends AppCompatActivity {
     private Locale local;
+    private int cont;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class PrefActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             local = (Locale) extras.get("Idioma");
+            cont = (int) extras.get("cont");
         }
         Locale.setDefault(local);
         Configuration configuration = getBaseContext().getResources().getConfiguration();
@@ -38,6 +40,7 @@ public class PrefActivity extends AppCompatActivity {
     public void onSave(View v) {
         Intent i = new Intent(this, GameActivity.class);
         i.putExtra("Idioma", local);
+        i.putExtra("cont",cont);
         finish();
         startActivity(i);
     }
