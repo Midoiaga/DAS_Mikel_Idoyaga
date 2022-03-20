@@ -26,5 +26,10 @@
     <string name="dtColorFon">Backgroud Color</string>
     <string name="suColorFon">Choose your color for the background</string>
     <string name="tiColorFon">Favourite backgroud color</string>
+    <string name="rendirse10">Give up you\'ll never make it</string>
+    <string name="notiRendir">Give Up</string>
+    <string name="tvPosicion">Position</string>
+    <string name="tvUsuario">Username</string>
+    <string name="tvPunto">Puntuation</string>
 
 </resources>

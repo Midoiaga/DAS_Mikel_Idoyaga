@@ -25,6 +25,7 @@
         android:layout_height="126dp"
         android:layout_marginTop="36dp"
         android:backgroundTint="#E60606"
+        android:onClick="onRendirse"
         android:text="@string/btnRendirse"
         android:textSize="34sp"
         android:textStyle="bold"

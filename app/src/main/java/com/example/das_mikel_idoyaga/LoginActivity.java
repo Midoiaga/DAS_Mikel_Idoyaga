@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
             Intent i = new Intent (this, GameActivity.class);
             i.putExtra("Idioma",local);
             i.putExtra("cont",0);
+            i.putExtra("usuario",usuario);
             startActivity(i);
         }
         else{

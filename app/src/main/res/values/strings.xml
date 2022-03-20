@@ -25,6 +25,11 @@
     <string name="dtColorFon">Color del fondo</string>
     <string name="suColorFon">Elige tu color para el fondo</string>
     <string name="tiColorFon">Color de fondo favorito</string>
+    <string name="rendirse10">Rindete nunca lo conseguiras</string>
+    <string name="notiRendir">Rendirse</string>
+    <string name="tvPosicion">Posición</string>
+    <string name="tvUsuario">Usuario</string>
+    <string name="tvPunto">Puntuación</string>
 
 
 
