@@ -18,11 +18,12 @@ public class InsDialogo extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        //Metodo que crea el dialogo de las instrucciones que una vez leido dandole al OK se cierra el dialogo
         super.onCreateDialog(savedInstanceState);
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("INSTRUCCIONES");
         builder.setMessage(R.string.dInstrucciones);
-        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
             }

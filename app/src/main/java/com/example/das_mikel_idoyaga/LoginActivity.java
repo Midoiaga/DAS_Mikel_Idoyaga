@@ -6,16 +6,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
 
 
-//MainActivity
+
 public class LoginActivity extends AppCompatActivity {
     private Locale local = new Locale("es");
     private MiBD GestorDB = new MiBD (this, "MiDB", null, 1);
@@ -29,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         if (extras != null) {
             local = (Locale) extras.get("Idioma");
         }
+        //Definir idioma
         Locale.setDefault(local);
         Configuration configuration = getBaseContext().getResources().getConfiguration();
         configuration.setLocale(local);
@@ -55,14 +54,16 @@ public class LoginActivity extends AppCompatActivity {
         finish();
         startActivity(getIntent().putExtra("Idioma",local));
     }
+
     public void onAqui(View view){
+        //Método que te lleva a la actividad de registrarse pulsando el botón Aquí
         Intent i = new Intent (this, RegisterActivity.class);
         i.putExtra("Idioma",local);
         startActivity(i);
-
     }
+
     public void onEntrar(View view){
-        Log.d("hola","Entrar");
+        //Metodo que te lleva a la actividad del juego una vez que haya confirmado que tu usuario y contraseña sean correctas cuando se de al botón entrar
         EditText etUsuario = findViewById(R.id.etUsuario);
         String usuario = etUsuario.getText().toString();
         EditText etContraseña = findViewById(R.id.epContraseña);
@@ -78,7 +79,9 @@ public class LoginActivity extends AppCompatActivity {
             hacerToast(R.string.tUsuarioOContraseñaMal);
         }
     }
+
     public void hacerToast(int s){
+        //Metodo de apoyo para hacer notificaciones del tipo toast
         Toast toast= Toast.makeText(this,s,Toast.LENGTH_SHORT);
         toast.show();
     }

@@ -4,12 +4,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class MiBD extends SQLiteOpenHelper {
     //Constructor
@@ -17,9 +15,9 @@ public class MiBD extends SQLiteOpenHelper {
                 @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
-    //Crear la case de datos con una tabla llamada Usuarios con las columnas Usuario, Contraseña y Puntuacion
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        //Crear la base de datos con una tabla llamada Usuarios con las columnas Usuario, Contraseña y Puntuación
         sqLiteDatabase.execSQL("CREATE TABLE Usuarios ('Usuario' VARCHAR(255) PRIMARY KEY NOT NULL, 'Contraseña' VARCHAR(255),'Puntuacion' INTEGER)");
     }
 
@@ -28,12 +26,12 @@ public class MiBD extends SQLiteOpenHelper {
 
     }
     public boolean coincide(String usuario,String contraseña){
+        //Método que comprobara existe un usuario con ese nombre y contraseña
         boolean resultado = false;
         int cont = 0;
         SQLiteDatabase bd = getWritableDatabase();
         Cursor c = bd.rawQuery("SELECT Usuario FROM Usuarios WHERE Usuario='"+usuario+"' AND Contraseña='"+contraseña+"'", null);
         while (c.moveToNext()){
-            Log.d("usu",c.getString(0));
             cont++;
         }
         if (cont>=1){
@@ -43,14 +41,14 @@ public class MiBD extends SQLiteOpenHelper {
         bd.close();
         return resultado;
     }
-    //Metodo para saber si existe un usuario con el mismo nombre en la base de datos
+
     public boolean existe(String usuario){
+        //Método para saber si existe un usuario con el mismo nombre en la base de datos
         boolean resultado = false;
         int cont = 0;
         SQLiteDatabase bd = getWritableDatabase();
         Cursor c = bd.rawQuery("SELECT Usuario FROM Usuarios WHERE Usuario='"+usuario+"'", null);
         while (c.moveToNext()){
-            Log.d("usu",c.getString(0));
             cont++;
         }
         if (cont>=1){
@@ -60,13 +58,16 @@ public class MiBD extends SQLiteOpenHelper {
         bd.close();
         return resultado;
     }
-    //Metodo para meter un nuevo usuario en la base de datos
+
     public void crearUsuario(String usuario, String contraseña){
+        //Método para meter un nuevo usuario en la base de datos
         SQLiteDatabase bd = getWritableDatabase();
         bd.execSQL("INSERT INTO Usuarios ('Usuario','Contraseña','Puntuacion') VALUES ('"+usuario+"','"+contraseña+"',0)");
         bd.close();
     }
+
     public ArrayList<UsuarioTop> top3(){
+        //Método que te devolvera los 3 usuarios con mayor puntuación
         ArrayList<UsuarioTop> arrayUsu= new ArrayList<UsuarioTop>();
         int cont = 0;
         SQLiteDatabase bd = getWritableDatabase();
@@ -75,8 +76,6 @@ public class MiBD extends SQLiteOpenHelper {
         }
         Cursor c = bd.rawQuery("SELECT Usuario, Puntuacion FROM Usuarios ORDER BY Puntuacion DESC LIMIT 3", null);
         while (c.moveToNext()){
-            Log.d("usu",c.getString(0));
-            Log.d("usu", String.valueOf(c.getInt(1)));
             arrayUsu.get(cont).setUsuario(c.getString(0));
             arrayUsu.get(cont).setPuntuacion(String.valueOf(c.getInt(1)));
             cont++;
@@ -86,9 +85,8 @@ public class MiBD extends SQLiteOpenHelper {
         return arrayUsu;
     }
     public void updateUsuario(String usuario, int puntuacion){
+        //Metodo que actualizara la puntuacion del usuario correspondiente si es superior a su puntuación anterior
         SQLiteDatabase bd = getWritableDatabase();
-        Log.d("hola",usuario);
-        Log.d("hola", String.valueOf(puntuacion));
         bd.execSQL("UPDATE Usuarios SET Puntuacion= "+puntuacion+" WHERE  Puntuacion < "+puntuacion+" AND Usuario = '"+usuario+"'");
         bd.close();
     }

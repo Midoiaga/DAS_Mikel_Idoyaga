@@ -30,6 +30,10 @@
     <string name="tvPosicion">Posición</string>
     <string name="tvUsuario">Usuario</string>
     <string name="tvPunto">Puntuación</string>
+    <string name="tvMuerte">Muerto</string>
+    <string name="tvVictoria">Victoria</string>
+    <string name="tFaltaUsuCon">Usuario o Contraseña vacio</string>
+
 
 
 

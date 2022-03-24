@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +16,7 @@ public class AdaptadorListView extends BaseAdapter {
     private int[] imagenes;
     private String[] texto;
 
+    //Getters
     @Override
     public int getCount() {
         return datos.length;
@@ -34,18 +34,20 @@ public class AdaptadorListView extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        //Metodo usado para definir el layout y los elementos que va a tener cada fila de la ListView
         view=inflater.inflate(R.layout.fila,null);
         TextView nombre= (TextView) view.findViewById(R.id.tvUsuario);
         ImageView img=(ImageView) view.findViewById(R.id.imgtop);
-        TextView boton= (TextView) view.findViewById(R.id.tvPuntuacion);
+        TextView tvPuntuacion= (TextView) view.findViewById(R.id.tvPuntuacion);
         nombre.setText(datos[i]);
         img.setImageResource(imagenes[i]);
-        boton.setText(texto[i]);
+        tvPuntuacion.setText(texto[i]);
         return view;
     }
 
     public AdaptadorListView(Context pcontext, String[] pdatos, int[] pimagenes, String[] pTexto)
     {
+        //Contructor donde definimos que valor corresponde a cada atributo
         contexto = pcontext;
         datos = pdatos;
         imagenes=pimagenes;
